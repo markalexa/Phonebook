@@ -3,7 +3,7 @@
 	include('sqlfunction.php');
 	
 	if($_SESSION['username']) {
-		
+		$message = "";
 		$username = $_SESSION['username'];
 	
 	
@@ -12,7 +12,11 @@
 	$numberOfEntries = "SELECT count(*) as total from ".$username.";";
 	$res = mysqli_query($link,$numberOfEntries);
 	$numberOfEntries_RESULT = mysqli_fetch_assoc($res);
-				
+	if($numberOfEntries_RESULT['total'] < 1) {
+			$message = '<li style="color:yellow;font-weight:bold;font-family:Arial;font-size:20px;">
+			<img src="arrow.png" width="20" height="auto" class="animated infinite bounce">&nbsp;&nbsp;&nbsp;Your phonebook is plain empty. Let\'s start with
+			 adding a person</li>';
+		}		
 				
 	if($result = mysqli_query($link,$query)) {
 		echo <<<END
@@ -27,24 +31,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
 	 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  		integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  		crossorigin="anonymous">
 	 <title>Online Phonebook: Your Phonebook</title>
     <link rel="stylesheet" type="text/css" href="phonebook.css">
   </head>
   <body>
   <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="logout.php">Log out</a></li><li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li></ul>
+  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="logout.php">Log out</a></li>
+  <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
   </div>
   	<h3>Howdy, $username</h3>
   <div class="jumbotron">
    	<div class="container">
   
 END;
-	
-		if($numberOfEntries_RESULT['total'] < 1) {
-			echo "Your phonebook is plain empty. Let's start with adding person.";
-		}
 			
-		echo <<<END
+echo <<<END
 				<table>
 				<tr><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th><th>Action</th></tr>
 END;

@@ -2,7 +2,7 @@
 	session_start();
 	setcookie("userID","1234",time() + 3600 * 24 * 7);
 	require('sqlfunction.php');
-	$success = $errMsg = "";
+	$message = $errMsg = "";
 	
 	if(isset($_POST['submit'])) {
 		
@@ -28,7 +28,7 @@
 			} 
 			if($userID == false) {
 				
-				$message = '<div class="alert alert-danger" role="alert" id="error">
+				$message = '<div style="font-family:Arial;font-size:18px;margin-left:8px;margin-top:10px;width:250px;" class="alert alert-danger" role="alert" id="error">
   							<p><strong>Login failed.</strong></p>Double-check your logins.</div>';
 			}
 		} catch (Exception $e) { echo "Request couldn't be processed"; }
@@ -42,8 +42,7 @@
 		$email = filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   					$errMsg = '<div class="alert alert-danger" role="alert">
-  						<strong>There was error in your form:</strong> Invalid email. Enter valid email address so I can get back to you.
-							</div>'; 
+  						<strong>There was error in your form:</strong> Invalid email.</div>'; 
 			}
 		$password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 		$password = sha1($password);
@@ -55,7 +54,8 @@
 		if($result = mysqli_query($link,$query)) {
 			
 				if(mysqli_num_rows($result) == 1) {
-					echo "You are already registered. Log in instead.";
+					$errMsg = '<div style="font-family:Arial;font-size:18px;" class="alert alert-danger" role="alert" id="error">
+  							<p><strong>Hey !</strong></p>You\'re already registered. Log in instead</div>';
 		  		} else {
 					$query = "create table ".$username."(dataID int(10) not null auto_increment primary key,first_name varchar(20) not null,last_name varchar(20) not null,phone_number bigint not null,email varchar(50) null);";
 					$sql = "insert into `users`(`username`,`email`,`password`) values('".$username."','".$email."','".$password."')";
@@ -73,7 +73,7 @@
 	}
 }
 
-mysqli_close($link);
+
 	
 ?>
 <!DOCTYPE html>
@@ -93,11 +93,12 @@ mysqli_close($link);
   </head>
   <body>
   <a id="switch">Log In</a>
+  <?php echo $message; ?>
   	<div id="text">
 				<h1>Save your phone numb<span>ers</span><br>into the Online Pho<span>nebook.</span></h1>
 				<h1>Securely. For free.</h1>
-				<h2>First timer ?</h2><?php echo $success; ?><h1 id="fromLeft">Sign Up !</h1>
-				<h3>or log in to add new numbers</h3>
+				<h2>First timer ?</h2><h1 id="fromLeft">Sign Up !</h1>
+				<h3>or log in to add new nu<span>m</span>bers</h3>
 	</div>
     
     <div class="container">
@@ -112,16 +113,18 @@ mysqli_close($link);
 		</form>
    
 		<form method="post" action="phonebookMainPage.php" id="signup">
+		<?php echo $errMsg; ?>
 			<div class="form-group">
 				
 				<label><span style="color:black;">Choose Your</span> Username</label>
-				<input type="text" class="form-control" name="username" alt="username" autofocus="autofocus" required>
+				<input type="text" class="form-control" name="username" alt="username" required>
 				<label>Your Email</label>
 				<input type="email" class="form-control" name="email" alt="email" required>
 				<label>Password</label>
 				<input type="password" class="form-control" name="password" alt="password" placeholder="password" required>
 				<input type="submit" name="submit" class="btn btn-primary" id="submit" value="Register">		
 			</div>	
+			 
 		</form> 
 	
 	</div>
