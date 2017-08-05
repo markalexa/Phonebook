@@ -88,28 +88,7 @@ mysqli_close($link);
 	 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	 <title>Online Phonebook</title>
-	 <style type="text/css">
-		#loginBtn {padding: 0 10px;border-radius:7px;font-size:25px;font-family: 'Dancing Script', Arial;bottom:10px;}
-	 	body {font-family: 'Dancing Script', cursive;background-image: url("phone.jpg");background-position: center center;background-repeat: no-repeat;
-	 	background-size: cover;}
-	 	#text {margin-left:10px;}
-	 	h1 , h2 , p {padding: 10px;}
-	 	h1 {font-size: 60px;}
-	 	h2 {font-size: 50px;}
-	 	#fromLeft {margin-left: 120px;}
-	 	h2 , h3 {margin-left: 100px;}
-	 	h3 {font-size: 40px;}
-	 	.container {margin-left:10px !important;margin-bottom:20px;width:250px !important;}
-	 	span {color: white;}
-	 	label {font-size: 40px;color: white;}
-	 	input {margin-bottom: 10px;font-family: Arial;font-size: 10px;}
-	 	#submit {margin-top: 10px;border-radius:8px;margin-left:30px;font-size: 30px;font-family: 'Dancing Script', Arial;background: #cea337;border-color:transparent;}
-		#submit:hover {background:#d6a731;}	 	
-	 	#login {display:none;margin-left: 30px;margin-top: 60px;}
-	 	#login label {color:#4c3806;}
-	 	#signup {margin-left: 30px;margin-top: 60px;}
-	 	#switch {font-size:25px;text-decoration: none;font-weight: bold;color:#4c3806;}
-	 </style>
+	 <link rel="stylesheet" type="text/css" href="phonebookMainPageStylesheet.css">
     
   </head>
   <body>

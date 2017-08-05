@@ -17,17 +17,38 @@
    	echo "<table><tr><th></th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th></tr>";
    	while($stmt->fetch()) {
    		echo <<<END
-   		<body>
+   		<!DOCTYPE html>
+			<html lang="en">
+  				<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	 <title>Online PhoneBook: Update</title>
+	 <link rel="stylesheet" type="text/css" href="phonebook.css">
+  </head>
+  <body>
+  <div class="page-header">
+  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="logout.php">Log out</a></li><li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li></ul>
+  </div>
+  <div class="container">
    		<form action="updatePhonebook.php" method="post">   		
    		<tr><td><input type="hidden" name="q" value="$dataID"></td><td><input type="text" name="firstName" value="$firstName" required></td><td><input type="text" name="lastName" value="$lastName" required></td>
 			<td><input type="number" name="phoneNumber" value="$phoneNumber" required></td><td><input type="email" name="email" value="$email"></td></tr></table><input type="submit" name="update" value="Update">
-			
-			
+			</form>
+	</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
 END;
 			
   		 }
-  		 echo '</form></body>';
-  		 
+  		   		 
   		 if(isset($_POST['update'])) {
   		
   			$dataID = $_POST['q'];
