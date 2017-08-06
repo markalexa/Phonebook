@@ -6,12 +6,12 @@ table th { background-color: black; color: white; padding-left:15px;padding-righ
 table tr:nth-child(even) { background-color: #eee; }
 table tr:nth-child(odd)  { background-color: #fff; }
 form {display:inline;padding:5px;}
-.page-header {margin:0;font-family:'Dancing Script',Arial;font-size:25px;}
+.page-header {margin:0 !important;font-family:'Dancing Script',Arial;font-size:25px;padding-top: 0;padding-bottom: 0;}
 .page-header ul li {display:inline-block;padding-right:18px;}
 .orange {color:#d35a19;}
 .orange:hover {color:#f25500;}
 .page-header ul li a:hover {text-decoration: none;}
 h3 {margin-left:10px;}
-p {position: absolute;bottom:0;right: 5px;font-family: Arial;font-size: 12px;}
+#credit {position: absolute;bottom:0;right: 5px;font-family: Arial;font-size: 12px;}
 span {color:white;}
 .page-header ul li a {font-size: 35px;}
