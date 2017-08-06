@@ -12,6 +12,6 @@ form {display:inline;padding:5px;}
 .orange:hover {color:#f25500;}
 .page-header ul li a:hover {text-decoration: none;}
 h3 {margin-left:10px;}
-#credit {position: absolute;bottom:0;right: 5px;font-family: Arial;font-size: 12px;}
+#credit {padding:0;margin:0;position: absolute;bottom:0;right:0;font-family: Arial;font-size: 12px;}
 span {color:white;}
 .page-header ul li a {font-size: 35px;}

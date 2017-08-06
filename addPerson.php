@@ -57,7 +57,7 @@
   </head>
   <body>
   <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="logout.php">Log out</a></li><li>
+  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log out</a></li><li>
   <a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li><li><a href="loggedIn.php">Back</a></li></ul>
   </div>
 
@@ -73,7 +73,7 @@
 			<label>Last Name: <input type="text" class="form-control" name="last_name" maxlength="20" required></label><br>
 			<label>Phone Number: <input type="number" class="form-control" name="phone_number" maxlength="10" required></label><br>
 			<label>Email: <input type="email" class="form-control" name="email"></label><br>
-			<button type="submit" class="btn btn-primary" name="submit">Add</button>
+			<button type="submit" class="btn btn-primary" name="submit"><span style="font-size:20px;">Add</span></button>
     	</div>
     </form>
     </div>

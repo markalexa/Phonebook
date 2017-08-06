@@ -34,12 +34,13 @@
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
   		integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
   		crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="phonebook.css">
 	 <title>Online Phonebook: Your Phonebook</title>
-    <link rel="stylesheet" type="text/css" href="phonebook.css">
+   
   </head>
   <body>
   <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="logout.php">Log out</a></li>
+  <ul><li><h1 style="margin-right:40px;color:white;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log out</a></li>
   <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
   </div>
   	<h3>Howdy, $username</h3>
@@ -59,7 +60,7 @@ END;
 				<input type='hidden' name='q' value='".$row[0]."'><input  type='submit' name='delete' value='Delete'></form></td></tr>";
 					
 			}
-			echo "</table>"; 
+			echo "</table><small>Notice: Phone numbers are displayed excluding initial zero."; 
   		} else {
   			echo "<br>Error: ".$query."<br>".mysqli_error($link);
   		}
