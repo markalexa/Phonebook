@@ -17,6 +17,8 @@
     
   </head>
   <body>
+  <p id="mobile-mode">This website has phone-viewing disabled by its creator. Please visit the website
+  on your tablet or computer.</p>
   <a id="switch">Log In</a>
   <?php echo $message; ?>
   	

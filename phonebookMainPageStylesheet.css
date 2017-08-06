@@ -19,3 +19,11 @@ input {margin-bottom: 10px;font-family: Arial;font-size: 10px;}
 #signup {margin-left: 30px;margin-top: 60px;}
 #switch {font-size:25px;text-decoration: none;font-weight: bold;color:yellow;position: absolute;top: 5px;right: 5px;}
 #credit {font-size:12px;font-family: Arial;position: absolute;bottom: 0;right: 5px;margin: 0;padding:0;}
+#mobile-mode {display:none;}
+
+@media (max-width: 468px) {
+
+	.jumbotron, #credit, #switch {display:none;}
+	#mobile-mode {color:black;font-family:Arial;font-size:12px;display: block !important;}
+	body {background: transparent;}
+}
