@@ -45,7 +45,7 @@
    		<form action="updatePhonebook.php" method="post">
    		<table><tr><th></th><th>First Name</th><th>Last Name</th><th>Phone Number</th><th>Email</th></tr>  		
    		<tr><td><input type="hidden" name="q" value="$dataID"></td><td><input type="text" name="firstName" value="$firstName" required></td><td><input type="text" name="lastName" value="$lastName" required></td>
-			<td><input type="number" name="phoneNumber" value="$phoneNumber" required></td><td><input type="email" name="email" value="$email"></td><td><input type="submit" name="update" value="Update"></td></tr></table>
+			<td><input type="number" name="phoneNumber" value="$phoneNumber" required></td><td><input type="email" name="email" value="$email" placeholder="optional"></td><td><input type="submit" name="update" value="Update"></td></tr></table>
 			</form>
 	</div>
 	</div>

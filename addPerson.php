@@ -41,7 +41,7 @@
 			<label>First Name: <input type="text" class="form-control" name="first_name" maxlength="20" required></label><br>
 			<label>Last Name: <input type="text" class="form-control" name="last_name" maxlength="20" required></label><br>
 			<label>Phone Number: <input type="number" class="form-control" name="phone_number" maxlength="10" required></label><br>
-			<label>Email: <input type="email" class="form-control" name="email"></label><br>
+			<label>Email: <input type="email" class="form-control" name="email" placeholder="optional"></label><br>
 			<button type="submit" class="btn btn-primary" name="submit"><span style="font-size:20px;">Add</span></button>
     	</div>
     </form>
