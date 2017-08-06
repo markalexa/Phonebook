@@ -1,6 +1,9 @@
 <?php
 	session_start();
 	require('sqlfunction.php');
+
+  if(isset($_SESSION['username'])) {
+
 	$username = $_SESSION['username'];
 	$dataID = $_SESSION['dataID'];
 	$link = connectDB();
@@ -80,4 +83,7 @@ END;
 }
 
  mysqli_close($link);
+} else {
+  header("Location: phonebookMainPage.php");
+}
 ?>

@@ -40,7 +40,7 @@
   </head>
   <body>
   <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;color:white;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log out</a></li>
+  <ul><li><h1 style="margin-right:40px;color:white;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log Out</a></li>
   <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
   </div>
   	<h3>Howdy, $username</h3>
@@ -79,10 +79,20 @@ END;
 echo <<<END
 	</div>
 	</div>
+	<a style="text-align:right;position:absolute;right:2px;bottom:18px;" alt="throw phonebook away" id="deleteAccount"><img  width="50%" length="auto" src="trashcan.png"></a>
 	<p id="credit">Photo by Álvaro Serrano on Unsplash</p>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script language="javascript">
+    $("#deleteAccount").on("click", function() {
+    	if(confirm("Are you sure ?  If you click OK all data will be erased and account deleted. This is irreversible.") ==true) {
+    		location.href='accountDeleted.php';
+    	} else {
+
+    	}
+    });
+    </script>
 	 </body>
 </html>
 END;
