@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+	session_start();
 	setcookie("userID","1234",time() + 3600 * 24 * 7);
 	require('sqlfunction.php');
 	$message = $errMsg = "";
@@ -52,26 +52,36 @@ session_start();
 		$link = connectDB();
 				
 		$query = "show tables like '".$username."'";
+		$query2 = "select email from users where email='".$email."';";
 		if($result = mysqli_query($link,$query)) {
 			
 				if(mysqli_num_rows($result) == 1) {
 					$errMsg = '<div style="font-family:Arial;font-size:18px;" class="alert alert-danger" role="alert" id="error">
-  							<p><strong>Hey !</strong></p>You\'re already registered. Log in instead</div>';
-		  		} else {
-					$query = "create table ".$username."(dataID int(10) not null auto_increment primary key,first_name varchar(20) not null,last_name varchar(20) not null,phone_number bigint not null,email varchar(50) null);";
-					$sql = "insert into `users`(`username`,`email`,`password`) values('".$username."','".$email."','".$password."')";
-					if(mysqli_query($link,$query) && mysqli_query($link,$sql)) {
-						$_SESSION['username'] = $username;
-						header("Location: loggedIn.php");
+  							<p><strong>Sorry,</strong></p>Username is taken. Try different one.</div>';
+  						
+				} else if($result2 = mysqli_query($link,$query2)) {
+					if(mysqli_num_rows($result2) == 1) {
+						$errMsg = '<div style="font-family:Arial;font-size:18px;" class="alert alert-danger" role="alert" id="error">
+  								<p><strong>Hey !</strong></p>You\'re already registered. Log in instead.</div>';
+		  			} else {
+						$query = "create table ".$username."(dataID int(10) not null auto_increment primary key,first_name varchar(20) not null,last_name varchar(20) not null,phone_number bigint not null,email varchar(50) null);";
+						$sql = "insert into `users`(`username`,`email`,`password`) values('".$username."','".$email."','".$password."')";
+						if(mysqli_query($link,$query) && mysqli_query($link,$sql)) {
+							$_SESSION['username'] = $username;
+							header("Location: loggedIn.php");
 						
-					} else {
-						echo "<br>Error: ".$sql."<br>".mysqli_error($link);
-						echo "<br>Error: ".$query."<br>".mysqli_error($link);
-					}
+						} else {
+							echo "<br>Error: ".$sql."<br>".mysqli_error($link);
+							echo "<br>Error: ".$query."<br>".mysqli_error($link);
+						}
 				}
 		}
-	} catch (Exception $e) { echo "Unable to process request"; }
 	}
+	
+	
+	} catch (Exception $e) { echo "Unable to process request"; }
+	
+}
 }
 
 ?>
