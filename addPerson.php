@@ -20,7 +20,7 @@
 	 	body {font-family: 'Dancing Script',Arial;font-size:25px;}
 	 	.jumbotron {padding-top: 0;margin-left: 10px;}
 	 	h2 {margin-left: 70px;margin-top: 40px;}
-	 	button {margin-top: 5px;width: 210px;}
+	 	button {margin-top: 5px;width: 195px;}
 	 	input {font-family: Arial;font-size: 18px;}
 	 </style>
   </head>
