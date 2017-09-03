@@ -1,5 +1,6 @@
+html {overflow-x: hidden;}
 body {background-image: url("bg.jpg");background-repeat: no-repeat;background-position: center center;background-size: cover;}
-.jumbotron {background:transparent !important;}
+.jumbotron {margin-bottom:15px;background:transparent !important;}
 .container {background:transparent !important;}
 table, th, td {border: 1px solid black; border-collapse: collapse;padding:10px;text-align:center; }
 table th { background-color: black; color: white; padding-left:15px;padding-right:15px; }    
@@ -11,7 +12,9 @@ form {display:inline;padding:5px;}
 .orange {color:#d35a19;}
 .orange:hover {color:#f25500;}
 .page-header ul li a:hover {text-decoration: none;}
-h3 {margin-left:10px;}
-#credit {padding:0;margin:0;position: absolute;bottom:0;right:0;font-family: Arial;font-size: 12px;}
+h3 {margin-left:10px;color:#4286f4;}
+#credit {padding:0;margin:0;position: relative;text-align:left;font-family: Arial;font-size: 12px;}
 span {color:white;}
 .page-header ul li a {font-size: 35px;}
+#deleteAccount {margin-left: 1000px;bottom:10px;}
+small {text-align: right;}

@@ -44,8 +44,8 @@
   <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
   </div>
   	<h3>Howdy, $username</h3>
-  <div class="jumbotron">
-   	<div class="container">
+  
+   	<div class="container" style="margin-top:30px;">
   
 END;
 			
@@ -60,7 +60,7 @@ END;
 				<input type='hidden' name='q' value='".$row[0]."'><input  type='submit' name='delete' value='Delete'></form></td></tr>";
 					
 			}
-			echo "</table><small>Notice: Phone numbers are displayed excluding initial zero."; 
+			echo "</table><small>Notice: Phone numbers are displayed excluding initial zero.\n<p id='credit'>Photo by Álvaro Serrano on Unsplash</p>"; 
   		} else {
   			echo "<br>Error: ".$query."<br>".mysqli_error($link);
   		}
@@ -78,9 +78,8 @@ END;
 }
 echo <<<END
 	</div>
-	</div>
-	<a style="text-align:right;position:absolute;right:2px;bottom:18px;" alt="throw phonebook away" id="deleteAccount"><img  width="50%" length="auto" src="trashcan.png"></a>
-	<p id="credit">Photo by Álvaro Serrano on Unsplash</p>
+	
+	<a alt='throw phonebook away' id='deleteAccount'><img  width='50px' length='auto' src='trashcan.png'></a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -92,7 +91,7 @@ echo <<<END
 
     	}
     });
-    </script>
+     </script>
 	 </body>
 </html>
 END;

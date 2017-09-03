@@ -15,7 +15,7 @@
   $tableDeleted = mysqli_query($link,$sql);
   if ($userDeleted && $tableDeleted) {
         $message = "<h1>Your phonebook is now in the bin. Sorry that you're leaving,
-     but remember your<br> Online Phonebook is just a click away. :)</h1>";
+     but remember, your<br> Online Phonebook is just a click away. :)</h1>";
     } else {
         $message = "Something went wrong";
     }
