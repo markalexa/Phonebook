@@ -4,9 +4,9 @@
     
     function connectDB() {
         
-        $link = new mysqli(db_host,db_user,db_name,db_pwd);
+        $link = new mysqli(db_host,db_user,db_pwd,db_name);
             if($link->connect_error) {
-            die("Connection failed: ".$link->connect_error);
+                die("Connection failed: ".$link->connect_error);
             }
         
             return $link;

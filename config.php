@@ -3,9 +3,9 @@
     // configuration settings
     
     define('db_host','localhost');
-    define('db_name','phonebook');
+    define('db_name','Phonebook');
     define('db_user','phonebookuser');
-    define('db_pwd','xxx');  //   <-- obscured for security reasons
+    define('db_pwd','phonebook');
     
 
 
