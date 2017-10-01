@@ -1,20 +1,119 @@
-html {overflow-x: hidden;}
-body {background-image: url("bg.jpg");background-repeat: no-repeat;background-position: center center;background-size: cover;}
-.jumbotron {margin-bottom:15px;background:transparent !important;}
-.container {background:transparent !important;}
-table, th, td {border: 1px solid black; border-collapse: collapse;padding:10px;text-align:center; }
-table th { background-color: black; color: white; padding-left:15px;padding-right:15px; }    
-table tr:nth-child(even) { background-color: #eee; }
-table tr:nth-child(odd)  { background-color: #fff; }
-form {display:inline;padding:5px;}
-.page-header {margin:0 !important;font-family:'Dancing Script',Arial;font-size:25px;padding-top: 0;padding-bottom: 0;}
-.page-header ul li {display:inline-block;padding-right:18px;}
-.orange {color:#d35a19;}
-.orange:hover {color:#f25500;}
-.page-header ul li a:hover {text-decoration: none;}
-h3 {margin-left:10px;color:#4286f4;}
-#credit {padding:0;margin:0;position: relative;text-align:left;font-family: Arial;font-size: 12px;}
-span {color:white;}
-.page-header ul li a {font-size: 35px;}
-#deleteAccount {position:absolute !important;top: 5px;right: 5px;background:black;}
-small {text-align: right;}
+html {
+	overflow-x: hidden;
+}
+
+body {
+	background-image: url("bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.jumbotron {
+	margin-bottom:15px;
+	background:transparent !important;
+}
+
+.container {
+	background:transparent !important;
+}
+	
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding:10px;
+	text-align:center;
+}
+
+table th {
+	background-color: black;
+	color: white;
+	padding-left:15px;
+	padding-right:15px;
+}
+    
+table tr:nth-child(even) {
+	background-color: #eee;
+}
+
+table tr:nth-child(odd)  {
+	background-color: #fff;
+}
+
+form {
+	display:inline;
+	padding:5px;
+}
+
+#back {
+	color:#5b3416;
+}
+
+#back:hover {
+	color: #f25500;
+}
+
+nav {
+	margin:0 !important;
+	font-family:'Dancing Script',Arial;
+	font-size:25px;
+	padding-top: 0;
+	padding-bottom: 0;
+	background: #9b6c49;
+	border-radius: 0;
+}
+
+nav ul li {
+	display:inline-block;
+	padding-right:18px;
+}
+
+.orange {
+	color:#5b3416;
+}
+
+.orange:hover {
+	color:#f25500;
+}
+
+nav ul li a:hover {
+	text-decoration: none;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+h3 {
+	margin-left:10px;
+	color:#4286f4;
+}
+
+#credit {
+	padding:0;
+	margin:0;
+	position: absolute;
+	font-family: Arial;
+	font-size: 12px;
+	bottom: 1px;
+	left: 1px;
+}
+
+span {
+	color:white;
+}
+
+nav ul li a {
+	font-size: 35px;
+}
+
+#deleteAccount {
+	position:absolute !important;
+	top: 5px;
+	right: 5px;
+	background:black;
+}
+
+small {
+	text-align: right;
+}

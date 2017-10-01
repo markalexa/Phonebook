@@ -13,9 +13,7 @@
 	$res = mysqli_query($link,$numberOfEntries);
 	$numberOfEntries_RESULT = mysqli_fetch_assoc($res);
 	if($numberOfEntries_RESULT['total'] < 1) {
-			$message = '<li style="color:yellow;font-weight:bold;font-family:Arial;font-size:20px;">
-			<img src="arrow.png" width="20" height="auto" class="animated infinite bounce">&nbsp;&nbsp;&nbsp;Your phonebook is plain empty. Let\'s start with
-			 adding a person</li>';
+			$message = '<li><img src="arrow.png" width="20" height="auto" class="animated infinite flash"></li>';
 		}		
 				
 	if($result = mysqli_query($link,$query)) {
@@ -26,24 +24,30 @@
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
-    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
 	 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
   		integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
   		crossorigin="anonymous">
-  	<link rel="stylesheet" type="text/css" href="phonebook.css">
+  	 <link rel="stylesheet" type="text/css" href="phonebook.css">
 	 <title>Online Phonebook: Your Phonebook</title>
    
   </head>
   <body>
-  <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;color:white;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log Out</a></li>
+  <nav class="navbar">
+  <div class="container-fluid">
+  <div class="navbar-header">
+  <ul><li><h1 style="color:black;margin-right:10px;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log Out</a></li>
   <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
   <button alt="throw phonebook away" id="deleteAccount" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
-  </div>
+  </div> 
+  </div> 
+  </nav>
   	<h3>Howdy, $username</h3>
   
    	<div class="container" style="margin-top:30px;">
@@ -81,9 +85,6 @@ echo <<<END
 	</div>
 	
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script language="javascript">
     $("#deleteAccount").on("click", function() {
     	if(confirm("Are you sure ?  If you click OK all data will be erased and account deleted. This is irreversible.") ==true) {

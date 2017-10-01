@@ -16,19 +16,28 @@
 	 <title>Online PhoneBook: Adding Person</title>
 	 <style type="text/css">
 	 	html {overflow-y: hidden;}
-	 	.page-header h1 {color:white;}
+	 	nav h1 {color:white;}
 	 	body {font-family: 'Dancing Script',Arial;font-size:25px;}
 	 	.jumbotron {padding-top: 0;margin-left: 10px;}
 	 	h2 {margin-left: 70px;margin-top: 40px;}
 	 	button {margin-top: 5px;width: 195px;}
 	 	input {font-family: Arial;font-size: 18px;}
+	 	
 	 </style>
   </head>
   <body>
-  <div class="page-header">
-  <ul><li><h1 style="margin-right:40px;"><span>Onl</span>ine PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log out</a></li><li>
-  <a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li><li><a href="loggedIn.php">Back</a></li></ul>
-  </div>
+  
+  <nav class="navbar">
+	  <div class="container-fluid">
+		  <div class="navbar-header">
+		    <ul>
+				  <li><h1 style="color:black;margin-right:10px;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log Out</a></li>
+				  <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>
+				  <li><a id="back" href="loggedIn.php">Back</a></li>
+			 </ul>
+		  </div> 
+	  </div> 
+  </nav>
 
 <div class="jumbotron">
 <h2>Add Person</h2>
