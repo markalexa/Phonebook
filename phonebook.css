@@ -16,5 +16,5 @@ h3 {margin-left:10px;color:#4286f4;}
 #credit {padding:0;margin:0;position: relative;text-align:left;font-family: Arial;font-size: 12px;}
 span {color:white;}
 .page-header ul li a {font-size: 35px;}
-#deleteAccount {margin-left: 1000px;bottom:10px;}
+#deleteAccount {position:absolute !important;top: 5px;right: 5px;background:black;}
 small {text-align: right;}

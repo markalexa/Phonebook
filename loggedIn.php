@@ -42,6 +42,7 @@
   <div class="page-header">
   <ul><li><h1 style="margin-right:40px;color:white;">Online PhoneBook</h1></li><li><a class="orange" href="loggedOut.php">Log Out</a></li>
   <li><a class="orange" href="addPerson.php" style="margin-left:10px;">Add Person</a></li>$message</ul>
+  <button alt="throw phonebook away" id="deleteAccount" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
   </div>
   	<h3>Howdy, $username</h3>
   
@@ -79,7 +80,7 @@ END;
 echo <<<END
 	</div>
 	
-	<a alt='throw phonebook away' id='deleteAccount'><img  width='50px' length='auto' src='trashcan.png'></a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
